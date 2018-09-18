@@ -137,11 +137,8 @@ run (const char *title, uint32_t iteractions, uint32_t rss_size,
       total += accum;
     }
 
-  printf ("%s\n", title);
-  printf ("  total: %lf\n", total/1e9);
-  printf ("  max:   %lf\n", max/1e9);
-  printf ("  min:   %lf\n", min/1e9);
-  printf ("  avg:   %lf\n", (total / iteractions)/1e9);
+  printf ("%s total=%lf max=%lf min=%lf avg=%lf\n", title,
+	  total/1e9, max/1e9, min/1e9, (total / iteractions) / 1e9);
  
   munmap (buffer, rss_size);
 }
